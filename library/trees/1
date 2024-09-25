@@ -1,0 +1,276 @@
+..FFFFFFFFFFFFFFFFEE
+
+======================================================================
+ERROR: t (unittest.loader._FailedTest.t)======================================================================
+ERROR: t (unittest.loader._FailedTest.t)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: t
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.4/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 't'
+
+
+
+----------------------------------------------------------------------
+ImportError: Failed to import test module: t
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.4/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 't'
+
+
+======================================================================
+======================================================================
+FAIL: test_eulerian_tour (test_tree.TestTreeTraversals.test_eulerian_tour)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 80, in test_eulerian_tour
+    self.assertEqual(eulerian_tour(self.general_tree), [1, 2, 5, 5, 6, 6, 2, 3, 3, 4, 7, 7, 8, 8, 4, 1])
+AssertionError: Lists differ: [] != [1, 2, 5, 5, 6, 6, 2, 3, 3, 4, 7, 7, 8, 8, 4, 1]
+
+Second list contains 16 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 2, 5, 5, 6, 6, 2, 3, 3, 4, 7, 7, 8, 8, 4, 1]
+
+======================================================================FAIL: test_eulerian_tour (test_tree.TestTreeTraversals.test_eulerian_tour)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 80, in test_eulerian_tour
+    self.assertEqual(eulerian_tour(self.general_tree), [1, 2, 5, 5, 6, 6, 2, 3, 3, 4, 7, 7, 8, 8, 4, 1])
+AssertionError: Lists differ: [] != [1, 2, 5, 5, 6, 6, 2, 3, 3, 4, 7, 7, 8, 8, 4, 1]
+
+Second list contains 16 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 2, 5, 5, 6, 6, 2, 3, 3, 4, 7, 7, 8, 8, 4, 1]
+
+======================================================================
+FAIL: test_inorder_traversal (test_tree.TestTreeTraversals.test_inorder_traversal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 71, in test_inorder_traversal
+    self.assertEqual(inorder_traversal(self.binary_tree), [4, 2, 5, 1, 6, 3, 7])
+AssertionError: Lists differ: [] != [4, 2, 5, 1, 6, 3, 7]
+
+Second list contains 7 additional elements.
+First extra element 0:
+4
+
+- []
++ [4, 2, 5, 1, 6, 3, 7]
+
+
+FAIL: test_inorder_traversal (test_tree.TestTreeTraversals.test_inorder_traversal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 71, in test_inorder_traversal
+    self.assertEqual(inorder_traversal(self.binary_tree), [4, 2, 5, 1, 6, 3, 7])
+AssertionError: Lists differ: [] != [4, 2, 5, 1, 6, 3, 7]
+
+Second list contains 7 additional elements.
+First extra element 0:
+4
+
+- []
++ [4, 2, 5, 1, 6, 3, 7]
+
+======================================================================
+FAIL: test_left_skewed_binary (test_tree.TestTreeTraversals.test_left_skewed_binary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 97, in test_left_skewed_binary
+    self.assertEqual(inorder_traversal(self.left_skewed_binary), [3, 2, 1])
+AssertionError: Lists differ: [] != [3, 2, 1]
+
+Second list contains 3 additional elements.
+First extra element 0:
+3
+
+- []
++ [3, 2, 1]
+
+======================================================================
+FAIL: test_left_skewed_binary (test_tree.TestTreeTraversals.test_left_skewed_binary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 97, in test_left_skewed_binary
+    self.assertEqual(inorder_traversal(self.left_skewed_binary), [3, 2, 1])
+AssertionError: Lists differ: [] != [3, 2, 1]
+
+Second list contains 3 additional elements.
+First extra element 0:
+3
+
+- []
++ [3, 2, 1]
+
+======================================================================
+FAIL: test_postorder_traversal (test_tree.TestTreeTraversals.test_postorder_traversal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 74, in test_postorder_traversal
+    self.assertEqual(postorder_traversal(self.binary_tree), [4, 5, 2, 6, 7, 3, 1])
+AssertionError: Lists differ: [] != [4, 5, 2, 6, 7, 3, 1]
+
+Second list contains 7 additional elements.
+First extra element 0:
+4
+
+- []
++ [4, 5, 2, 6, 7, 3, 1]
+
+======================================================================
+FAIL: test_preorder_traversal (test_tree.TestTreeTraversals.test_preorder_traversal)
+----------------------------------------------------------------------
+======================================================================
+FAIL: test_postorder_traversal (test_tree.TestTreeTraversals.test_postorder_traversal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 74, in test_postorder_traversal
+    self.assertEqual(postorder_traversal(self.binary_tree), [4, 5, 2, 6, 7, 3, 1])
+AssertionError: Lists differ: [] != [4, 5, 2, 6, 7, 3, 1]
+
+Second list contains 7 additional elements.
+First extra element 0:
+4
+
+- []
++ [4, 5, 2, 6, 7, 3, 1]
+
+======================================================================
+FAIL: test_preorder_traversal (test_tree.TestTreeTraversals.test_preorder_traversal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 77, in test_preorder_traversal
+    self.assertEqual(preorder_traversal(self.binary_tree), [1, 2, 4, 5, 3, 6, 7])
+AssertionError: Lists differ: [] != [1, 2, 4, 5, 3, 6, 7]
+
+Second list contains 7 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 2, 4, 5, 3, 6, 7]
+
+======================================================================
+FAIL: test_right_skewed_binary (test_tree.TestTreeTraversals.test_right_skewed_binary)
+----------------------------------------------------------------------Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 77, in test_preorder_traversal
+    self.assertEqual(preorder_traversal(self.binary_tree), [1, 2, 4, 5, 3, 6, 7])
+AssertionError: Lists differ: [] != [1, 2, 4, 5, 3, 6, 7]
+
+Second list contains 7 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 2, 4, 5, 3, 6, 7]
+
+======================================================================
+FAIL: test_right_skewed_binary (test_tree.TestTreeTraversals.test_right_skewed_binary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 102, in test_right_skewed_binary
+    self.assertEqual(inorder_traversal(self.right_skewed_binary), [1, 2, 3])
+AssertionError: Lists differ: [] != [1, 2, 3]
+
+Second list contains 3 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 2, 3]
+
+
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 102, in test_right_skewed_binary
+    self.assertEqual(inorder_traversal(self.right_skewed_binary), [1, 2, 3])
+AssertionError: Lists differ: [] != [1, 2, 3]
+
+Second list contains 3 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 2, 3]
+
+======================================================================
+FAIL: test_single_node_binary (test_tree.TestTreeTraversals.test_single_node_binary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 89, in test_single_node_binary
+    self.assertEqual(inorder_traversal(self.single_node_binary), [1])
+AssertionError: Lists differ: [] != [1]
+
+Second list contains 1 additional elements.
+First extra element 0:
+1
+
+- []
++ [1]
+?  +
+
+
+======================================================================
+======================================================================
+FAIL: test_single_node_binary (test_tree.TestTreeTraversals.test_single_node_binary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 89, in test_single_node_binary
+    self.assertEqual(inorder_traversal(self.single_node_binary), [1])
+AssertionError: Lists differ: [] != [1]
+
+Second list contains 1 additional elements.
+First extra element 0:
+1
+
+- []
++ [1]
+?  +
+
+
+======================================================================
+FAIL: test_single_node_general (test_tree.TestTreeTraversals.test_single_node_general)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 94, in test_single_node_general
+    self.assertEqual(eulerian_tour(self.single_node_general), [1, 1])
+AssertionError: Lists differ: [] != [1, 1]
+
+Second list contains 2 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 1]
+
+FAIL: test_single_node_general (test_tree.TestTreeTraversals.test_single_node_general)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/glam3k/data_structures_and_algorithms/library/trees/test_tree.py", line 94, in test_single_node_general
+    self.assertEqual(eulerian_tour(self.single_node_general), [1, 1])
+AssertionError: Lists differ: [] != [1, 1]
+
+Second list contains 2 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 1]
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+Ran 10 tests in 0.001s
+
+FAILED (failures=8, errors=1)
+FAILED (failures=8, errors=1)
