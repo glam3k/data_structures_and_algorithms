@@ -3,7 +3,6 @@ from typing import Any, Tuple
 
 INITIAL_SIZE = 12
 RESIZE_FACTOR = 2
-DOWNSIZE_UTILIZATION_THRESHOLD = 0.25
 
 class HeapPriorityQueue(PriorityQueue):
     """
@@ -12,7 +11,7 @@ class HeapPriorityQueue(PriorityQueue):
     """
 
     def __init__(self):
-        self._heap = [None] * 10
+        self._heap = [None] * INITIAL_SIZE
         self._size = 0
 
     def add(self, key: Any, value: Any) -> None:
@@ -62,9 +61,10 @@ class HeapPriorityQueue(PriorityQueue):
         result = self._heap[0]
         self._heap[0] = self._heap[self._size - 1]
         self._heap[self._size - 1] = None
+        self._size = self._size - 1
+
         self._bubble_down(0)
 
-        self._size = self._size - 1
         if self._size != 0 and len(self._heap) / self._size >= RESIZE_FACTOR**2:
             self._resize(len(self._heap) // RESIZE_FACTOR)
 
@@ -89,11 +89,26 @@ class HeapPriorityQueue(PriorityQueue):
         return self._size
 
     def _bubble_up(self, i):
-        pass
+        while ((i - 1) // 2 >= 0) and self._heap[(i - 1) // 2][0] > self._heap[i][0]:
+            self._heap[(i - 1) // 2],  self._heap[i] = self._heap[i], self._heap[(i - 1) // 2]
+            i = (i - 1) // 2
 
     def _bubble_down(self, i):
-        pass
-        
+        # while it has a child with a lesser key, swap position with lesser
+        # key child
+        while (
+                (2*i+1 < self._size and self._heap[2*i+1][0] < self._heap[i][0])
+                or (2*i+2 < self._size and self._heap[2*i+2][0] < self._heap[i][0])
+                ):
+            # has right child with lesser key, and right child has leser key than
+            # left child
+            if 2*i+2 < self._size and self._heap[2*i+2][0] < self._heap[i][0] and self._heap[2*i+2][0] < self._heap[2*i+1][0]: 
+                self._heap[i], self._heap[2*i+2] = self._heap[2*i+2], self._heap[i]
+                i = 2*i+2
+            else: # swap with left child
+                self._heap[i], self._heap[2*i+1] = self._heap[2*i+1], self._heap[i]
+                i = 2*i+1
+
     def _resize(self, new_size: int):
         assert self._size < new_size
         new_heap = [None] * new_size

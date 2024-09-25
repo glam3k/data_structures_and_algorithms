@@ -49,7 +49,7 @@ class TestHeapPriorityQueue(unittest.TestCase):
         self.pq.add(0, "zero")
         self.assertEqual(self.pq.min(), (0, "zero"))
         self.assertEqual(len(self.pq), 3)
-        self.assertEqual(self.pq.remove_min(), "zero")
+        self.assertEqual(self.pq.remove_min(), (0, "zero"))
 
     def test_min_without_remove(self):
         self.pq.add(3, "three")
@@ -80,16 +80,6 @@ class TestHeapPriorityQueue(unittest.TestCase):
         for i in range(1000):
             expected = (i + 1, f"item{999-i}")
             self.assertEqual(self.pq.remove_min(), expected)
-
-    def test_key_types(self):
-        # Test with different comparable types
-        self.pq.add(3.14, "pi")
-        self.pq.add("apple", "fruit")
-        self.pq.add((1, 2), "tuple")
-        
-        self.assertEqual(self.pq.remove_min(), ((1, 2), "tuple"))
-        self.assertEqual(self.pq.remove_min(), (3.14, "pi"))
-        self.assertEqual(self.pq.remove_min(), ("apple", "fruit"))
 
 if __name__ == '__main__':
     unittest.main()

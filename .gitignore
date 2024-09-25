@@ -35,3 +35,7 @@ Compiled source #
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
