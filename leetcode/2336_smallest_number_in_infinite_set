@@ -1,0 +1,109 @@
+import heapq
+
+class SmallestInfiniteSet:
+    MAX_NUM = 1000
+
+    def __init__(self):
+        self._nums_in_set = [num for num in range(1, SmallestInfiniteSet.MAX_NUM+1)]
+        heapq.heapify(self._nums_in_set)
+        self._popped_nums = set()
+
+    def popSmallest(self) -> int:
+        result = heapq.heappop(self._nums_in_set)
+        self._popped_nums.add(result)
+        return result
+
+    def addBack(self, num: int) -> None:
+        if num in self._popped_nums:
+            self._popped_nums.remove(num)
+            heapq.heappush(self._nums_in_set, num)
+
+# obj = SmallestInfiniteSet()
+# param_1 = obj.popSmallest()
+# obj.addBack(num)
+
+
+"""
+Notes
+
+What happens if you add back a number that is still in the infinite set? It is ok. Return none like normal.
+
+Is there a guarantee on how many times each will be called?
+
+Does this need inf memory? No. nums is bounded 1<=nums<=1000
+
+Doing both in constant space seems very unlikely/impossible, as it needs to remember a "stream" of actions.
+
+There may be some benefit/tradeoff to making addback take time...
+
+- It seems like there are an infinite number of numbers that can be popped, but they can only be popped in a pattern...
+
+lets say buffer of unpopped is  size 5..
+- easy access to smallest and largest
+- Key idea
+[1, 2, 3, 4, 5]
+
+[8, 9, 10, 11, 12]
+ 
+popSmallest
+popSmallest
+popSmallest
+popSmallest
+popSmallest
+
+addBack(1)
+addBack(4)
+problem:
+
+wtf man, yes we can keep all the things we have popped/unpopped in a
+
+Ideas:
+
+The key is the data structure used for the memo:
+
+1. Naive approach. Unordered List
+
+Create unordered iterable of numbers that have been popped.
+addBack: remove from iterable O(n) amortized
+addBack:
+popSmallest: O(n^2) check from 1 to size of memo. each check is O(n)
+
+2. Set 
+
+addBack:
+- delete num from set O(1)
+
+popSmallest:
+- can check from 1 to size of popSmallest for smallest number not in popSmallest O(n)
+
+2. SortedSet 
+
+Similar to naive approach, but keep popped_list sortedset. 
+
+addBack:
+- Delete smallest from memo
+popSmallest:
+- Check smallest in memo.
+- - if > 1, return 1
+- - if 1, Naive same approach as 2, but now each takes O(log(n)), so total would be O(nlog(n)) if same approach done.
+- Since it is sorted, we can start at 1, then walk the list to get the smallest not popped number(no gaps) O(n)
+
+3. Priority queue as memory
+
+Can easily alleviate this by just having 2 structures: priority Queue.
+
+This really is just a priotity queue problem. Pqueue always a complete tree. Deleting from a priority queue is O(log(n))
+
+
+- Is this really needed? Both operations will take log(n) anyways.
+Removing always takes log(n), which tree will do anyways.
+
+Can I have more than one data structure to solve this?
+
+4. Memo the smallest that we have not popped. Then add it back in. Use priority queue.
+we know what the smallest are, it is the largest we do not know.
+
+5. Memo the universe in a sortedset.
+pop the smallest. Add back in..?
+
+"""
