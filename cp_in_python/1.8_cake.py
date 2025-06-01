@@ -1,10 +1,9 @@
-j
 """
 Notes:
 
 1. Brute Force
 
-We have an nxn grid of rectangles. 
+We have an nxn grid of rectangles.
 count the area of each, and it to the appropriate
 counter based on the coloring formula.
 
@@ -39,7 +38,7 @@ ex 1:
 [1, 2, 3, 4, 5, 6]
 [1, 2, 3, 4, 5, 6]
 
-1s = a1 * b1 + a1*b4 + 
+1s = a1 * b1 + a1*b4 +
 
 Then the cake looks like
 [4, 8, 12]
@@ -48,4 +47,11 @@ Then the cake looks like
 
 Questions:
 all  heihgts are positive?
+"""
+
+
+"""
+
+soln form book:
+    Idea is reduce to 3*3 case hard fomrula, by "permuting" rows and columns. this perserves area. Runs in O(n)
 """
